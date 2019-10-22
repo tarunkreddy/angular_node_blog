@@ -1,0 +1,28 @@
+<form
+  novalidate
+  name="newPostForm"
+  [formGroup]="newPostForm"
+  (ngSubmit)="newPostForm.valid && onSubmit(newPostForm.value)"
+>
+  <div>
+    <label for="title">
+      Title
+    </label>
+    <input id="title" type="text" required formControlName="title" />
+  </div>
+  <div>
+    <label for="author">
+      Author
+    </label>
+    <input id="author" type="text" required formControlName="author" />
+  </div>
+  <div>
+    <label for="body">
+      Body
+    </label>
+    <input id="body" type="text" required formControlName="body" />
+  </div>
+  <button class="button" type="submit" [disabled]="!newPostForm.valid">
+    New Post
+  </button>
+</form>
